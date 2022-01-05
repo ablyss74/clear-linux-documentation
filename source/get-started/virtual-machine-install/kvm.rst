@@ -47,7 +47,7 @@ Download and launch the virtual machine image
 
    .. code-block:: bash
 
-      unxz -v clear-<version>-kvm.img.xz
+      xz -dv clear-<version>-kvm.img.xz
 
 #. Download the 3 OVMF files (`OVMF.fd`, `OVMF_CODE.fd`, `OVMF_VARS.fd`) that
    provides UEFI  support for virtual machines.
