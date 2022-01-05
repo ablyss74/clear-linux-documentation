@@ -75,17 +75,11 @@ Download and launch the virtual machine image
 
       curl -O https://cdn.download.clearlinux.org/image/start_qemu.sh
 
-#. Make the script executable:
-
-   .. code-block:: bash
-
-      chmod +x start_qemu.sh
-
 #. Start the |CL| KVM virtual machine:
 
    .. code-block:: bash
 
-      sudo ./start_qemu.sh clear-<version>-kvm.img
+      sudo bash ./start_qemu.sh clear-<version>-kvm.img
 
 #. Log in as ``root`` user and set a new password.
 
