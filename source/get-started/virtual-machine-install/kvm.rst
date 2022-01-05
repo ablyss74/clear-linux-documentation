@@ -41,13 +41,13 @@ Download and launch the virtual machine image
 
    .. code-block:: bash
 
-      curl -O https://cdn.download.clearlinux.org/image/$(curl https://cdn.download.clearlinux.org/image/latest-images.json | grep -o clear-'[0-9]'*-kvm.img.xz | head -1)
+      curl -o clear.img.xz https://cdn.download.clearlinux.org/image/$(curl https://cdn.download.clearlinux.org/image/latest-images.json | grep -o clear-'[0-9]'*-kvm.img.xz | head -1)
 
 #. Uncompress the downloaded image:
 
    .. code-block:: bash
 
-      unxz -v clear-<version>-kvm.img.xz
+      xz -dv clear.img.xz
 
 #. Download the 3 OVMF files (`OVMF.fd`, `OVMF_CODE.fd`, `OVMF_VARS.fd`) that
    provides UEFI  support for virtual machines.
@@ -75,17 +75,11 @@ Download and launch the virtual machine image
 
       curl -O https://cdn.download.clearlinux.org/image/start_qemu.sh
 
-#. Make the script executable:
-
-   .. code-block:: bash
-
-      chmod +x start_qemu.sh
-
 #. Start the |CL| KVM virtual machine:
 
    .. code-block:: bash
 
-      sudo ./start_qemu.sh clear-<version>-kvm.img
+      sudo bash ./start_qemu.sh clear.img
 
 #. Log in as ``root`` user and set a new password.
 
